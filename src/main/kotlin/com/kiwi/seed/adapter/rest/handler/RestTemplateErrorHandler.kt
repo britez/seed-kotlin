@@ -1,7 +1,7 @@
 package com.kiwi.seed.adapter.rest.handler
 
 import com.kiwi.seed.adapter.rest.exception.RestClientGenericException
-import com.kiwi.seed.config.exception.ErrorCode
+import com.kiwi.seed.config.ErrorCode
 import org.springframework.http.HttpStatus
 import org.springframework.http.client.ClientHttpResponse
 import org.springframework.web.client.ResponseErrorHandler

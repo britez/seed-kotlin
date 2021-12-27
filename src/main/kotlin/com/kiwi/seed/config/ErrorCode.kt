@@ -1,4 +1,4 @@
-package com.kiwi.seed.config.exception
+package com.kiwi.seed.config
 
 enum class ErrorCode(val value:Int, val reason:String) {
 

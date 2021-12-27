@@ -1,5 +1,6 @@
 package com.kiwi.seed.config.exception
 
+import com.kiwi.seed.config.ErrorCode
 import kotlin.RuntimeException
 
 open class GenericException(

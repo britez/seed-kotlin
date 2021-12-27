@@ -5,7 +5,7 @@ import com.kiwi.seed.adapter.rest.exception.TimeoutRestClientException
 import com.kiwi.seed.adapter.rest.handler.RestTemplateErrorHandler
 import com.kiwi.seed.application.port.out.PokemonRepository
 import com.kiwi.seed.config.PokemonConfiguration
-import com.kiwi.seed.config.exception.ErrorCode
+import com.kiwi.seed.config.ErrorCode
 import com.kiwi.seed.domain.Ability
 import com.kiwi.seed.domain.Pokemon
 import org.slf4j.LoggerFactory

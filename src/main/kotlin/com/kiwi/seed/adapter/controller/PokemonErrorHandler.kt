@@ -3,7 +3,7 @@ package com.kiwi.seed.adapter.controller
 import com.kiwi.seed.adapter.rest.exception.NotFoundRestClientException
 import com.kiwi.seed.adapter.rest.exception.TimeoutRestClientException
 import com.kiwi.seed.config.TraceSleuthInterceptor
-import com.kiwi.seed.config.exception.ErrorCode
+import com.kiwi.seed.config.ErrorCode
 import com.kiwi.seed.config.exception.GenericException
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value

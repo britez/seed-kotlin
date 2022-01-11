@@ -34,13 +34,13 @@ class PokemonErrorHandler(
     @ExceptionHandler(value = [NotFoundRestClientException::class])
     fun handle(ex: GenericException): ResponseEntity<ApiErrorResponse?>? {
         log.error(HttpStatus.NOT_FOUND.reasonPhrase, ex)
-        return buildResponseError(HttpStatus.NOT_FOUND, ex, ex.errorCode!!)
+        return buildResponseError(HttpStatus.NOT_FOUND, ex, ex.errorCode)
     }
 
     @ExceptionHandler(TimeoutRestClientException::class)
     fun handle(ex: TimeoutRestClientException): ResponseEntity<ApiErrorResponse?>? {
         log.error(HttpStatus.REQUEST_TIMEOUT.reasonPhrase, ex)
-        return buildResponseError(HttpStatus.REQUEST_TIMEOUT, ex, ex.errorCode!!)
+        return buildResponseError(HttpStatus.REQUEST_TIMEOUT, ex, ex.errorCode)
     }
 
     private fun buildResponseError(

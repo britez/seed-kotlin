@@ -4,7 +4,7 @@ import com.kiwi.seed.config.ErrorCode
 import kotlin.RuntimeException
 
 open class GenericException(
-    val errorCode: ErrorCode?,
-    message:String?,
-    override val cause: Throwable?) : RuntimeException() {
+    val errorCode: ErrorCode,
+    message:String,
+    override val cause: Throwable?) : RuntimeException(message, cause) {
 }

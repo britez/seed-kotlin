@@ -65,7 +65,7 @@ class PokemonControllerTest {
         val invalidName = "invalidName"
         Mockito
             .`when`(findPokemonUseCase!!.execute(invalidName))
-            .thenThrow(NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND))
+            .thenThrow(NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND, ErrorCode.POKEMON_NOT_FOUND.reason))
 
         mockMvc!!
             .get(url, invalidName) {

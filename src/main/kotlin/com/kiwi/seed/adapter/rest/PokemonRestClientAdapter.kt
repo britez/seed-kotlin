@@ -23,8 +23,8 @@ class PokemonRestClientAdapter(
 
     init {
         restTemplate.errorHandler = RestTemplateErrorHandler(mapOf(
-            HttpStatus.NOT_FOUND to NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND),
-            HttpStatus.REQUEST_TIMEOUT to TimeoutRestClientException(ErrorCode.POKEMON_TIMEOUT)))
+            HttpStatus.NOT_FOUND to NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND, ErrorCode.POKEMON_NOT_FOUND.reason),
+            HttpStatus.REQUEST_TIMEOUT to TimeoutRestClientException(ErrorCode.POKEMON_TIMEOUT, ErrorCode.POKEMON_TIMEOUT.reason)))
     }
 
     override fun findPokemonByName(name: String): Pokemon =
@@ -32,7 +32,7 @@ class PokemonRestClientAdapter(
             .info("Attempt to execute http request for pokemon $name")
             .let { restTemplate.getForObject(pokemonConfiguration.getFindByNamePath(), PokemonModel::class.java, name) }
             .also { log.info("Response for http request for pokemon $name {}", it) }
-            .let { it?.toDomain() ?: throw NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND) }
+            .let { it?.toDomain() ?: throw NotFoundRestClientException(ErrorCode.POKEMON_NOT_FOUND, ErrorCode.POKEMON_NOT_FOUND.reason) }
 
     data class PokemonModel(
         val id:Long,

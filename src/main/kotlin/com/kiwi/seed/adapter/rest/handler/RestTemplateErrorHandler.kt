@@ -11,6 +11,6 @@ class RestTemplateErrorHandler(private val exceptionsMap:Map<HttpStatus, Runtime
     override fun hasError(response: ClientHttpResponse): Boolean = response.statusCode.isError
 
     override fun handleError(response: ClientHttpResponse) = throw exceptionsMap.getOrDefault(response.statusCode,
-        RestClientGenericException(ErrorCode.WEB_CLIENT_GENERIC))
+        RestClientGenericException(ErrorCode.WEB_CLIENT_GENERIC, ErrorCode.WEB_CLIENT_GENERIC.reason))
 
 }
